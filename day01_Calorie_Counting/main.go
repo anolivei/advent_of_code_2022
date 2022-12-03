@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 	"strconv"
+	"sort"
 )
 
 func main() {
@@ -17,17 +18,20 @@ func main() {
 	dats2 := strings.Split(dats, "\n")
 	for j := 0; j < len(dats2); j++ {
 		sum := 0
-		for j = j; dats2[j] != ""; j++ {
-				x, _ := strconv.Atoi(dats2[j])
+		for dats2[j] != "" {
+				x, err := strconv.Atoi(dats2[j])
+				if err != nil {
+					panic(err)
+				}
 				sum += x
+				j++
 		}
 		ret = append(ret, sum)
 	}
-	r := 0
-	for i := 0; i < len(ret); i++ {
-		if ret[i] > r {
-			r = ret[i]
-		}
-	}
-	fmt.Println(ret, r)
+	sort.Ints(ret)
+	ret1 := ret[len(ret) - 1]
+	ret2 := ret[len(ret) - 1] + ret[len(ret) - 2] + ret[len(ret) - 3]
+	fmt.Println("--- Part One --- ", ret1)
+	fmt.Println("--- Part Two --- ", ret2)
+
 }
