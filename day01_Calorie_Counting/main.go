@@ -33,5 +33,4 @@ func main() {
 	ret2 := ret[len(ret) - 1] + ret[len(ret) - 2] + ret[len(ret) - 3]
 	fmt.Println("--- Part One --- ", ret1)
 	fmt.Println("--- Part Two --- ", ret2)
-
 }
