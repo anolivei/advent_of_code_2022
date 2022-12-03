@@ -14,17 +14,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	dats := string(dat)
-	dats2 := strings.Split(dats, "\n")
-	for j := 0; j < len(dats2); j++ {
+	datString := strings.Split(string(dat), "\n")
+	for i := 0; i < len(datString); i++ {
 		sum := 0
-		for dats2[j] != "" {
-				x, err := strconv.Atoi(dats2[j])
+		for datString[i] != "" {
+				n, err := strconv.Atoi(datString[i])
 				if err != nil {
 					panic(err)
 				}
-				sum += x
-				j++
+				sum += n
+				i++
 		}
 		ret = append(ret, sum)
 	}
