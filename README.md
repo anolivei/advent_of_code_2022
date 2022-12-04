@@ -49,10 +49,10 @@ There are two puzzles per day and they are unlock at midnight EST/UTC-5:
 
 | Day | Part one | Part two |
 | --- | ------- | -------- |
-| [Day 1: Calorie Counting](https://github.com/anolivei/advent_of_code_2021/tree/main/day01_Sonar_Sweep)| ⭐️ | ⭐️ |
-| [Day 2: Rock Paper Scissors](https://github.com/anolivei/advent_of_code_2021/tree/main/day02_Dive)| ⭐️ | ⭐️ |
-| [Day 3: Rucksack Reorganization](https://github.com/anolivei/advent_of_code_2021/tree/main/day03_Binary_Diagnostic) | ⭐️ | ⭐️ |
-| [Day 4: Camp Cleanup](https://github.com/anolivei/advent_of_code_2021/tree/main/day04_Giant_Squid)| ⭐️ | ⭐️ |
+| [Day 1: Calorie Counting](https://github.com/anolivei/advent_of_code_2022/tree/main/day01_Calorie_Counting)| ⭐️ | ⭐️ |
+| [Day 2: Rock Paper Scissors](https://github.com/anolivei/advent_of_code_2022/tree/main/day02_Rock_Paper_Scissors)| ⭐️ | ⭐️ |
+| [Day 3: Rucksack Reorganization](https://github.com/anolivei/advent_of_code_2022/tree/main/day03_Rucksack_Reorganization) | ⭐️ | ⭐️ |
+| [Day 4: Camp Cleanup](https://github.com/anolivei/advent_of_code_2022/tree/main/day04_Camp_Cleanup)| ⭐️ | ⭐️ |
 
 ## Technologies ##
 
