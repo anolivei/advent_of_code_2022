@@ -37,6 +37,7 @@ func shapeSelected(ret []string) int {
 func main() {
 	var ret [][]string
 	var ret1 int
+	var ret2 int
 	dat, err := os.ReadFile("./input.txt")
 	if err != nil {
 		panic(err)
@@ -47,7 +48,6 @@ func main() {
 		ret1 += shapeSelected(dup) + draw(dup) + won(dup)
 		ret = append(ret, dup)
 	}
-	ret2 := 0
 	fmt.Println("--- Part One --- ", ret1)
 	fmt.Println("--- Part Two --- ", ret2)
 }
