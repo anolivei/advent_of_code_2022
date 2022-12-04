@@ -89,9 +89,9 @@ func main() {
 	}
 	datString := strings.Split(string(dat), "\n")
 	for i := 0; i < len(datString) - 1; i++ {
-		dup := strings.Split(string(datString[i]), " ")
-		ret1 += shapeSelected(dup) + draw(dup) + won(dup)
-		ret2 += wonOrDraw(dup) + isRock(dup) + isPaper(dup) + isScissors(dup)
+		ret := strings.Split(string(datString[i]), " ")
+		ret1 += shapeSelected(ret) + draw(ret) + won(ret)
+		ret2 += wonOrDraw(ret) + isRock(ret) + isPaper(ret) + isScissors(ret)
 	}
 	fmt.Println("--- Part One --- ", ret1)
 	fmt.Println("--- Part Two --- ", ret2)
