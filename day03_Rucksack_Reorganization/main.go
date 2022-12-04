@@ -35,6 +35,21 @@ func partOne(s string) int {
 	return int(decode(letter))
 }
 
+func partTwo(s1, s2, s3 string) int {
+	var letter string
+	for i := 0; i < len(s1); i++ {
+		for j := 0; j < len(s2); j++ {
+			for k:= 0; k < len(s3); k++ {
+				if s1[i] == s2[j] && s1[i] == s3[k] {
+					letter = string(s1[i])
+					break
+				}
+			}
+		}
+	}
+	return int(decode(letter))
+}
+
 func main() {
 	var ret1 int
 	var ret2 int
@@ -46,6 +61,9 @@ func main() {
 	datString := strings.Split(string(dat), "\n")
 	for i := 0; i < len(datString) - 1; i++ {
 		ret1 += partOne(datString[i])
+	}
+	for i := 0; i < len(datString) - 3; i += 3 {
+		ret2 += partTwo(datString[i], datString[i + 1], datString[i + 2])
 	}
 	fmt.Println("--- Part One --- ", ret1)
 	fmt.Println("--- Part Two --- ", ret2)
