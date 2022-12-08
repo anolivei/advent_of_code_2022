@@ -63,7 +63,7 @@ func partOne(cmd []string, n int, s []string) {
 		}
 	}
 	var ret1 string
-	for _, s := range stacks{
+	for _, s := range stacks {
 		ret1 = ret1 + fmt.Sprint(string(s.popOne()))
 	}
 	fmt.Println("--- Part One --- ", ret1)
@@ -77,7 +77,7 @@ func partTwo(cmd []string, n int, s []string) {
 		stacks[to - 1].pushTwo(stacks[from - 1].popTwo(toMove))
 	}
 	var ret2 string
-	for _, s := range stacks{
+	for _, s := range stacks {
 		ret2 = ret2 + fmt.Sprint(string(s.popOne()))
 	}
 	fmt.Println("--- Part Two --- ", ret2)
