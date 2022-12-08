@@ -9,9 +9,7 @@ func thereIsDuplicate(s string) (bool) {
 	m := make(map[rune]uint, len(s))
 	for _, r := range s {
 		m[r]++
-	}
-	for _, r := range s {
-		if m[r] >= 2 {
+		if m[r] > 1 {
 			return true
 		}
 	}
