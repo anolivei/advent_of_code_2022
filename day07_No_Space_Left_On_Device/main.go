@@ -33,38 +33,22 @@ func calcSize(dir directory) (int) {
 }
 
 func parseInput(input []string, currentDir *directory, dirs []*directory) ([]*directory) {
-	for i := 0; i < len(input) - 1; i++ {
+	currentDir = &directory{"/", 0, false, make(map[string]*directory), nil}
+	dirs = append(dirs, currentDir)
+	for i := 1; i < len(input) - 1; i++ {
 		line := strings.Split(input[i], " ")
 		if line[1] == "cd" {
 			if line[2] == ".." {
 				currentDir = currentDir.upperDir
-			} else if line[2] == "/" {
-				currentDir = &directory{
-										"/",
-										0,
-										false,
-										make(map[string]*directory),
-										nil}
-				dirs = append(dirs, currentDir)
 			} else {
 				currentDir = currentDir.subDir[line[2]]
 			}
 		} else if line[0] == "dir" {
-			currentDir.subDir[line[1]] = &directory{
-													line[1],
-													0,
-													false,
-													make(map[string]*directory),
-													currentDir}
+			currentDir.subDir[line[1]] = &directory{line[1], 0, false, make(map[string]*directory), currentDir}
 			dirs = append(dirs, currentDir.subDir[line[1]])
 		} else if line[1] != "ls" {
 			size, _ := strconv.Atoi(line[0])
-			currentDir.subDir[line[1]] = &directory{
-													line[1],
-													size,
-													true,
-													nil,
-													currentDir}
+			currentDir.subDir[line[1]] = &directory{line[1], size, true, nil, currentDir}
 		}
 	}
 	return dirs
