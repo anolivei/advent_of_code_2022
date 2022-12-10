@@ -32,8 +32,9 @@ func calcSize(dir directory) (int) {
 	return size
 }
 
-func parseInput(input []string, currentDir *directory, dirs []*directory) ([]*directory) {
-	currentDir = &directory{"/", 0, false, make(map[string]*directory), nil}
+func parseInput(input []string) ([]*directory) {
+	dirs := []*directory{}
+	currentDir := &directory{"/", 0, false, make(map[string]*directory), nil}
 	dirs = append(dirs, currentDir)
 	for i := 1; i < len(input) - 1; i++ {
 		line := strings.Split(input[i], " ")
@@ -84,9 +85,7 @@ func main() {
 		panic(err)
 	}
 	input := strings.Split(string(dat), "\n")
-	var currentDir *directory
-	dirs := []*directory{}
-	dirs = parseInput(input, currentDir, dirs)
+	dirs := parseInput(input)
 	partOne(dirs)
 	partTwo(dirs)
 }
